@@ -5,6 +5,8 @@ const pages = document.querySelectorAll(".page");
 const pageNumber = document.getElementById("pageNumber");
 const leftButton = document.querySelector(".nav-btn.left");
 const rightButton = document.querySelector(".nav-btn.right");
+const music = document.getElementById("bgMusic");
+music.volume = 0.11;
 
 function updateNav() {
   pageNumber.textContent = `${currentPage + 1} / ${pages.length}`;
