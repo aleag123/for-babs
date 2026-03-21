@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #a1c3d6, #ffffff);
+  background: linear-gradient(to bottom right, #b5d6ea, #ffffff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +24,9 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
+  transform: translateX(40px);
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -34,7 +35,28 @@ body {
 
 .page.active {
   opacity: 1;
+  transform: translateX(0);
   pointer-events: auto;
+}
+
+.page.enter-right {
+  opacity: 0;
+  transform: translateX(80px);
+}
+
+.page.enter-left {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.page.exit-left {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.page.exit-right {
+  opacity: 0;
+  transform: translateX(80px);
 }
 
 .page-content {
@@ -172,4 +194,136 @@ p {
   margin: 10px auto 0 auto;
   text-align: center;
   font-size: 1rem;
+}
+
+.final-page-content {
+  justify-content: center;
+  gap: 20px;
+}
+
+.final-text {
+  max-width: 560px;
+  font-size: 1.1rem;
+}
+
+.final-question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.final-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.final-btn {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.final-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+}
+
+.yes-btn {
+  background: linear-gradient(to right, #ffd6e7, #ffe7f1);
+  color: #2f2a2a;
+}
+
+.no-btn {
+  background: #f1f1f1;
+  color: #2f2a2a;
+  position: relative;
+}
+
+.celebration-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 40px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.celebration-page h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.celebration-hearts {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.restart-btn {
+  margin-top: 24px;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(to right, #dfefff, #f5f9ff);
+  color: #2f2a2a;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+}
+
+.music-btn {
+  position: fixed; 
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  color: #333;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.music-btn.playing {
+  background: #f7e49e;
+  color: #b09a4b;
+}
+
+.music-btn {
+  transition: all 0.2s ease, transform 0.15s ease;
+}
+
+.music-btn:active {
+  transform: scale(0.9);
 }

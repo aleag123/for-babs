@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>for my baba ❤️</title>
+  <title>for my baba 💛</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,19 +12,18 @@
 
     <div class="page active">
       <div class="page-content first-page-content">
-        <h1>hi baba ❤️</h1>
+        <h1>HI BABAAAA 💛</h1>
 
         <div class="photo-grid">
           <img src="baba trip/iCloud Photos/IMG_2099.JPEG" alt = "photo 1" class="photo-grid-img">
-          <img src="baba trip\iCloud Photos\IMG_2096.JPEG"alt = "photo 2" class="photo-grid-img">
+          <img src="baba trip/iCloud Photos/IMG_2096.JPEG"alt = "photo 2" class="photo-grid-img">
           <img src="baba trip/iCloud Photos/IMG_2094.JPEG" alt = "photo 3" class="photo-grid-img">
           <img src="baba trip/iCloud Photos/IMG_2094.JPEG" alt="photo 4" class="photo-grid-img">
 
         </div>
 
         <p class = "first-page-paragraph">
-          hi baba i made this for youuu i love you
-        </p>
+These past few months talking to you and getting to know you more and more have been the best months of my life. I'm so incredibly grateful for you and never thought I would be able to find someone that matches me this much. I made this little website for you, and I hope you like it hehehe I like you sosososo much, more than you'll ever know.        </p>
       </div>
     </div>
 
@@ -50,11 +49,21 @@
     </div>
 
     <div class="page">
-      <div class="page-content">
-        <h1>so...</h1>
-        <p>i wanted to ask you something important.</p>
-      </div>
+  <div class="page-content final-page-content">
+    <h1>so i wanted to ask you something...</h1>
+
+    <p class="final-text">
+      these past 6 months have genuinely meant so much to me, and our trip made me even more sure of how much i care about you.
+    </p>
+
+    <p class="final-question">will you be my girlfriend? </p>
+
+    <div class="final-buttons">
+      <button class="final-btn yes-btn" onclick="sayYes()">yes 💌</button>
+      <button class="final-btn no-btn" onclick="moveNoButton(this)">no</button>
     </div>
+  </div>
+</div>
 
     <button class="nav-btn left" onclick="prevPage()">&#10094;</button>
     <button class="nav-btn right" onclick="nextPage()">&#10095;</button>
@@ -62,7 +71,15 @@
     <div class="page-number" id="pageNumber">1 / 5</div>
 
   </div>
+  <audio id="bgMusic" loop>
+    <source src="audio/itsgottabeyou.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" onclick="startMusic()">
+  ♪
+  </button>
 
   <script src="script.js"></script>
+  
 </body>
 </html>
