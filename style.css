@@ -69,8 +69,9 @@ body {
 }
 
 h1 {
+  margin-top: 0;
   font-size: 2.6rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #2f2a2a
 }
 
@@ -128,6 +129,7 @@ p {
   }
 
   h1 {
+    margin-top: 0;
     font-size: 2rem;
   }
 
@@ -149,6 +151,24 @@ p {
   .photo-grid-img{
     height:140px;
   }
+
+  .side-layout-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .side-images {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .side-photo {
+    width: 30%;
+    min-width: 90px;
+    height: 100px;
+  }
 }
 
 .photo {
@@ -157,12 +177,6 @@ p {
   margin-top: 50px;
   border-radius: 50px;
   box-shadow: 4px 8px 18px rgba(3, 3, 3, 0.12);
-}
-
-.first-page-content{
-  justify-content: flex-start;
-  padding-top: 10px;
-  gap: 20px;
 }
 
 .top-title {
@@ -189,11 +203,26 @@ p {
 
 }
 
+.first-page-content{
+  justify-content: flex-start;
+  padding-top: 0%;
+  margin-top: -50px;
+  gap: 20px;
+}
+
+.first-page-content h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .first-page-paragraph {
   max-width: 700px;
-  margin: 10px auto 0 auto;
+  margin-top: -20px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color:#000000;
 }
 
 .final-page-content {
@@ -326,4 +355,33 @@ p {
 
 .music-btn:active {
   transform: scale(0.9);
+}
+
+.side-layout-page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+  height: 100%;
+  text-align: left;
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.side-photo {
+  width:100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.side-text p {
+  max-width: none;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
