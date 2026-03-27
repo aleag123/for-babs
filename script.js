@@ -95,3 +95,9 @@ function startMusic() {
     btn.textContent = "♪";
   }
 }
+
+function playMwah() {
+  const mwah = document.getElementById("mwah");
+  mwah.currentTime = 0;
+  mwah.play();
+}
