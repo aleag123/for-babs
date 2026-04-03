@@ -63,9 +63,8 @@ updateNav();
 function sayYes() {
   document.querySelector(".book-container").innerHTML = `
     <div class="celebration-page">
-      <h1>YAYYYYYY ❤️</h1>
-      <p>you just made me the happiest boy alive</p>
-      <div class="celebration-hearts">💖 💌 ❤️ 💕 💞</div>
+      <h1>YAYYY 💛💛💛</h1>
+      <p>Ohh heyy girilfriend... wait why that got a ring to it.. 🤔 </p>
       <button class="restart-btn" onclick="restartBook()">restart</button>
     </div>
   `;
