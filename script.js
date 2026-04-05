@@ -68,19 +68,34 @@ pages.forEach((page, i) => {
 updateNav();
 
 function sayYes() {
+  const book = document.querySelector(".book-container");
+
   explodeHearts();
+  book.classList.add("transition-out");
 
   setTimeout(() => {
-    document.querySelector(".book-container").innerHTML = `
+    book.innerHTML = `
       <div class="celebration-page">
-        <h1>YAYYY 💛💛💛</h1>
-        <p>Ohh heyy girlfriend... wait why that got a ring to it.. 🤔</p>
-        <button class="restart-btn" onclick="restartBook()">restart</button>
+        <div class="celebration-content">
+          <h1 class="celebration-title">MY girlfriend!!!</h1>
+          <p class="celebration-message">
+            ... wait why that got a ring to it.. 🤔<br>
+            you just made me the happiest boy in the world and i hope this book made you smile as much as you make me smile everyday <3<br>
+          </p>
+
+          <button class="restart-btn" onclick="restartBook()">restart</button>
+        </div>
       </div>
     `;
-  }, 900);
-}
 
+    book.classList.remove("transition-out");
+    book.classList.add("transition-in");
+  }, 700);
+
+  setTimeout(() => {
+    book.classList.remove("transition-in");
+  }, 1400);
+}
 function moveNoButton(button) {
   const x = Math.floor(Math.random() * 260) - 180;
   const y = Math.floor(Math.random() * 180) - 110;
