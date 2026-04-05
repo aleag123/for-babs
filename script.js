@@ -1,3 +1,4 @@
+let heartInterval = null;
 let currentPage = 0;
 let isAnimating = false;
 
@@ -6,7 +7,7 @@ const pageNumber = document.getElementById("pageNumber");
 const leftButton = document.querySelector(".nav-btn.left");
 const rightButton = document.querySelector(".nav-btn.right");
 const music = document.getElementById("bgMusic");
-music.volume = 0.11;
+music.volume = 0.11; //hehehe mwah
 
 function updateNav() {
   pageNumber.textContent = `${currentPage + 1} / ${pages.length}`;
@@ -43,6 +44,12 @@ function showPage(index, direction = "right") {
     currentPage = index;
     updateNav();
     isAnimating = false;
+
+    if (currentPage === pages.length - 1) {
+      startHearts();
+    } else {
+      stopHearts();
+    }
   }, 500);
 }
 
@@ -61,13 +68,17 @@ pages.forEach((page, i) => {
 updateNav();
 
 function sayYes() {
-  document.querySelector(".book-container").innerHTML = `
-    <div class="celebration-page">
-      <h1>YAYYY 💛💛💛</h1>
-      <p>Ohh heyy girilfriend... wait why that got a ring to it.. 🤔 </p>
-      <button class="restart-btn" onclick="restartBook()">restart</button>
-    </div>
-  `;
+  explodeHearts();
+
+  setTimeout(() => {
+    document.querySelector(".book-container").innerHTML = `
+      <div class="celebration-page">
+        <h1>YAYYY 💛💛💛</h1>
+        <p>Ohh heyy girlfriend... wait why that got a ring to it.. 🤔</p>
+        <button class="restart-btn" onclick="restartBook()">restart</button>
+      </div>
+    `;
+  }, 900);
 }
 
 function moveNoButton(button) {
@@ -99,4 +110,50 @@ function playMwah() {
   const mwah = document.getElementById("mwah");
   mwah.currentTime = 0;
   mwah.play();
+}
+
+function startHearts() {
+  if (heartInterval) return;
+
+  heartInterval = setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💛";
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.top = "80%";
+
+    document.querySelector(".book-container").appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }, 800);
+}
+
+function stopHearts() {
+  clearInterval(heartInterval);
+  heartInterval = null;
+
+  document.querySelectorAll(".heart").forEach(h => h.remove());
+}
+
+function explodeHearts() {
+  const container = document.querySelector(".book-container");
+
+  for (let i = 0; i < 24; i++) {
+    const heart = document.createElement("div");
+    heart.className = "burst-heart";
+    heart.textContent = "💛";
+
+    const angle = (Math.PI * 2 * i) / 24;
+    const distance = 120 + Math.random() * 80;
+
+    heart.style.left = "50%";
+    heart.style.top = "55%";
+    heart.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+    heart.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+
+    container.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 1000);
+  }
 }
