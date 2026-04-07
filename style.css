@@ -505,6 +505,19 @@ p {
 .third-page-paragraph::-webkit-scrollbar-thumb:hover {
   background: #bcc7d1;
 }
+.photo-four {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.photo-four img {
+  width: 220px;        
+  height: 220px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+}
 
 .ask-page {
   justify-content: flex-start;

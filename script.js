@@ -7,7 +7,7 @@ const pageNumber = document.getElementById("pageNumber");
 const leftButton = document.querySelector(".nav-btn.left");
 const rightButton = document.querySelector(".nav-btn.right");
 const music = document.getElementById("bgMusic");
-music.volume = 0.11; //hehehe mwah
+music.volume = 0.03; //hehehe mwah
 
 function updateNav() {
   pageNumber.textContent = `${currentPage + 1} / ${pages.length}`;
@@ -79,8 +79,8 @@ function sayYes() {
         <div class="celebration-content">
           <h1 class="celebration-title">MY girlfriend!!!</h1>
           <p class="celebration-message">
-            ... wait why that got a ring to it.. 🤔<br>
-            you just made me the happiest boy in the world and i hope this book made you smile as much as you make me smile everyday <3<br>
+            Wait ... why that got a ring to it.. 🤔<br>
+            Thank you for being a part of my life, I can't imagine a life without you anymore. You've made me the happiest boy ever <33<br>
           </p>
 
           <button class="restart-btn" onclick="restartBook()">restart</button>
@@ -125,6 +125,7 @@ function playMwah() {
   const mwah = document.getElementById("mwah");
   mwah.currentTime = 0;
   mwah.play();
+  mwah.volume = 0.05
 }
 
 function startHearts() {
