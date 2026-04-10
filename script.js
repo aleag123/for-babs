@@ -80,7 +80,7 @@ function sayYes() {
           <h1 class="celebration-title">MY GIRLFRIEND!!!</h1>
           <p class="celebration-message">
             Wait ... why that got a ring to it.. hehe mwahhhh <br>
-            Thank you for being a part of my life, I can't imagine a life without you anymore. You've made me the happiest boy ever <33<br>
+            Thank you for being a part of my life, I want it any other way. You just made me the happiest boy in the whole universe hehehe<33 <33<br>
           </p>
 
           <button class="restart-btn" onclick="restartBook()">restart</button>
