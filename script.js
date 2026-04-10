@@ -7,7 +7,7 @@ const pageNumber = document.getElementById("pageNumber");
 const leftButton = document.querySelector(".nav-btn.left");
 const rightButton = document.querySelector(".nav-btn.right");
 const music = document.getElementById("bgMusic");
-music.volume = 0.03; //hehehe mwah
+music.volume = 0.11; 
 
 function updateNav() {
   pageNumber.textContent = `${currentPage + 1} / ${pages.length}`;
@@ -77,9 +77,9 @@ function sayYes() {
     book.innerHTML = `
       <div class="celebration-page">
         <div class="celebration-content">
-          <h1 class="celebration-title">MY girlfriend!!!</h1>
+          <h1 class="celebration-title">MY GIRLFRIEND!!!</h1>
           <p class="celebration-message">
-            Wait ... why that got a ring to it.. 🤔<br>
+            Wait ... why that got a ring to it.. hehe mwahhhh <br>
             Thank you for being a part of my life, I can't imagine a life without you anymore. You've made me the happiest boy ever <33<br>
           </p>
 
